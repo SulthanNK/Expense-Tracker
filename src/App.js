@@ -1,35 +1,61 @@
 import ExpenseItem from "./components/ExpenseItem/ExpenseItem";
 
 function App() {
-  const expenses = [
-    { title: "Home Provision", price: 147.65, date: new Date(2021, 28, 10) },
-    { title: "Bike Service", price: 250.54, date: new Date(2021, 12, 8) },
-    { title: "Internet Bill", price: 147.65, date: new Date(2021, 28, 10) },
-    { title: "Health Checkup", price: 499.99, date: new Date(2021, 28, 10) },
+  const expenseData = [
+    {
+      id: "e001",
+      title: "Kindle eBooks",
+      price: 39.99,
+      date: new Date(2021, 1, 10),
+    },
+    {
+      id: "e002",
+      title: "Home Utensils",
+      price: 355.42,
+      date: new Date(2021, 3, 11),
+    },
+    {
+      id: "e003",
+      title: "Fuel(monthly)",
+      price: 470.61,
+      date: new Date(2021, 5, 12),
+    },
+    {
+      id: "e004",
+      title: "Desk Lamp",
+      price: 43.57,
+      date: new Date(2021, 7, 13),
+    },
+    {
+      id: "e005",
+      title: "Groceries",
+      price: 72.29,
+      date: new Date(2021, 9, 14),
+    },
   ];
 
   return (
     <div>
       <h2>Expense Tracker</h2>
       <ExpenseItem
-        title={expenses[0].title}
-        price={expenses[0].price}
-        date={expenses[0].date}
+        title={expenseData[0].title}
+        price={expenseData[0].price}
+        date={expenseData[0].date}
       ></ExpenseItem>
       <ExpenseItem
-        title={expenses[1].title}
-        price={expenses[1].price}
-        date={expenses[1].date}
+        title={expenseData[1].title}
+        price={expenseData[1].price}
+        date={expenseData[1].date}
       ></ExpenseItem>
       <ExpenseItem
-        title={expenses[2].title}
-        price={expenses[2].price}
-        date={expenses[2].date}
+        title={expenseData[2].title}
+        price={expenseData[2].price}
+        date={expenseData[2].date}
       ></ExpenseItem>
       <ExpenseItem
-        title={expenses[3].title}
-        price={expenses[3].price}
-        date={expenses[3].date}
+        title={expenseData[3].title}
+        price={expenseData[3].price}
+        date={expenseData[3].date}
       ></ExpenseItem>
     </div>
   );
