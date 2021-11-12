@@ -3,29 +3,29 @@ import { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredPrice, setEnteredPrice] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [date, setDate] = useState('');
 
   function titleChangeHandler(event) {
-    setEnteredTitle(event.target.value);
+    setTitle(event.target.value);
   }
 
   function priceChangeHandler(event) {
-    setEnteredPrice(event.target.value);
+    setPrice(event.target.value);
   }
 
   function dateChangeHandler(event) {
-    setEnteredDate(event.target.value);
+    setDate(event.target.value);
   }
 
   function submitHandler(event) {
     event.preventDefault();
 
     const newExpenseData = {
-      title: enteredTitle,
-      price: enteredPrice,
-      date: new Date(enteredDate),
+      title: title,
+      price: price,
+      date: new Date(date),
     };
 
     console.log(newExpenseData);
@@ -62,6 +62,6 @@ const ExpenseForm = () => {
       </div>
     </form>
   );
-}
+};
 
 export default ExpenseForm;
