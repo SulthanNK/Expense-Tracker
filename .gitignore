@@ -28,6 +28,7 @@ lerna-debug.log*
 .pnpm-debug.log*
 
 # yarn v2
+.yarn/
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
