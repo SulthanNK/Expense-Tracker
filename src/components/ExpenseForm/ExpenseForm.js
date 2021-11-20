@@ -3,32 +3,36 @@ import { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredPrice, setEnteredPrice] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [date, setDate] = useState('');
 
   function titleChangeHandler(event) {
-    setEnteredTitle(event.target.value);
+    setTitle(event.target.value);
   }
 
   function priceChangeHandler(event) {
-    setEnteredPrice(event.target.value);
+    setPrice(event.target.value);
   }
 
   function dateChangeHandler(event) {
-    setEnteredDate(event.target.value);
+    setDate(event.target.value);
   }
 
   function submitHandler(event) {
     event.preventDefault();
 
     const newExpenseData = {
-      title: enteredTitle,
-      price: enteredPrice,
-      date: new Date(enteredDate),
+      title: title,
+      price: price,
+      date: new Date(date),
     };
 
     console.log(newExpenseData);
+
+    setTitle('');
+    setPrice('');
+    setDate('');
   }
 
   return (
@@ -36,7 +40,7 @@ const ExpenseForm = () => {
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>
-          <input type='text' onChange={titleChangeHandler} />
+          <input type='text' value={title} onChange={titleChangeHandler} />
         </div>
         <div className='new-expense__control'>
           <label>Price</label>
@@ -44,6 +48,7 @@ const ExpenseForm = () => {
             type='number'
             min='0.01'
             step='0.01'
+            value={price}
             onChange={priceChangeHandler}
           />
         </div>
@@ -53,6 +58,7 @@ const ExpenseForm = () => {
             type='date'
             min='2020-01-01'
             step='2023-12-31'
+            value={date}
             onChange={dateChangeHandler}
           />
         </div>
@@ -62,6 +68,6 @@ const ExpenseForm = () => {
       </div>
     </form>
   );
-}
+};
 
 export default ExpenseForm;
