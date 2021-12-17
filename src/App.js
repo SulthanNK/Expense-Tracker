@@ -35,10 +35,15 @@ const App = () => {
     },
   ];
 
+  const addExpense = (expense) => {
+    console.log('from App.js');
+    console.log(expense);
+  };
+
   return (
     <div>
       <h2>Expense Tracker</h2>
-      <NewExpense />
+      <NewExpense onDataPass={addExpense} />
       <Expense data={expenseData} />
     </div>
   );
