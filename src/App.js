@@ -1,50 +1,43 @@
+import { useState } from 'react';
+
 import Expense from './components/Expense/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
 
+const dummyData = [
+  {
+    id: 'e001',
+    title: 'Clock',
+    price: 25.99,
+    date: new Date(2019, 1, 10),
+  },
+  {
+    id: 'e002',
+    title: 'Desk Lamp',
+    price: 43.55,
+    date: new Date(2020, 7, 13),
+  },
+  {
+    id: 'e003',
+    title: 'Mobile Stand',
+    price: 72.99,
+    date: new Date(2020, 9, 14),
+  },
+];
+
 const App = () => {
-  const expenseData = [
-    {
-      id: 'e001',
-      title: 'Kindle eBooks',
-      price: 39.99,
-      date: new Date(2021, 1, 10),
-    },
-    {
-      id: 'e002',
-      title: 'Home Utensils',
-      price: 355.42,
-      date: new Date(2021, 3, 11),
-    },
-    {
-      id: 'e003',
-      title: 'Fuel(monthly)',
-      price: 470.61,
-      date: new Date(2021, 5, 12),
-    },
-    {
-      id: 'e004',
-      title: 'Desk Lamp',
-      price: 43.57,
-      date: new Date(2021, 7, 13),
-    },
-    {
-      id: 'e005',
-      title: 'Groceries',
-      price: 72.29,
-      date: new Date(2021, 9, 14),
-    },
-  ];
+  const [expenses, setExpenses] = useState(dummyData);
 
   const addExpense = (expense) => {
-    console.log('from App.js');
-    console.log(expense);
+    setExpenses((prevExpense) => {
+      return [expense, ...prevExpense];
+    });
   };
 
   return (
     <div>
       <h2>Expense Tracker</h2>
       <NewExpense onDataPass={addExpense} />
-      <Expense data={expenseData} />
+      <Expense data={expenses} />
     </div>
   );
 };
