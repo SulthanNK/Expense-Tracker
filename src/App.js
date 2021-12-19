@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Expense from './components/Expense/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
 
+import './styles/App.css';
+
 const dummyData = [
   {
     id: 'e001',
@@ -35,7 +37,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Expense Tracker</h2>
+      <h2 className='app__title'>Expense Tracker</h2>
       <NewExpense onDataPass={addExpense} />
       <Expense data={expenses} />
     </div>
