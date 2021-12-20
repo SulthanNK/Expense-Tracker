@@ -3,12 +3,14 @@ import { useState } from 'react';
 import Expense from './components/Expense/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
 
+import './styles/App.css';
+
 const dummyData = [
   {
     id: 'e001',
     title: 'Clock',
     price: 25.99,
-    date: new Date(2019, 1, 10),
+    date: new Date(2020, 1, 10),
   },
   {
     id: 'e002',
@@ -20,7 +22,7 @@ const dummyData = [
     id: 'e003',
     title: 'Mobile Stand',
     price: 72.99,
-    date: new Date(2020, 9, 14),
+    date: new Date(2021, 9, 14),
   },
 ];
 
@@ -35,7 +37,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Expense Tracker</h2>
+      <h2 className='app__title'>Expense Tracker</h2>
       <NewExpense onDataPass={addExpense} />
       <Expense data={expenses} />
     </div>
