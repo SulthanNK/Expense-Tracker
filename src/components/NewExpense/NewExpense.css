@@ -36,3 +36,19 @@
 .new-expense button.alternative:active {
   background-color: #ddb3f8;
 }
+
+.app__title {
+  color: #1f1f1f;
+  padding: 1rem 2rem;
+}
+
+.app__head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 13rem;
+}
+
+.app__button {
+  margin-left: 4rem;
+}
