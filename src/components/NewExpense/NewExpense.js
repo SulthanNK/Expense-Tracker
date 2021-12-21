@@ -28,11 +28,11 @@ const NewExpense = (props) => {
 
   return (
     <div className='new-expense'>
-      <div className='app__head'>
+      <div className='app-head'>
         <div>
-          {!formDisplay && <h2 className='app__title'>Expense Tracker</h2>}
+          {!formDisplay && <h2 className='app-title'>Expense Tracker</h2>}
         </div>
-        <div className='app__button'>
+        <div className='app-button'>
           {!formDisplay && (
             <button onClick={formDisplayHandler}>New Expense</button>
           )}
